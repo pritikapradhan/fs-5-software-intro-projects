@@ -5,8 +5,8 @@ from pid_template import calculate_desired_acceleration
 from pid_template import acceleration_to_throttle_percentage
 
 
-K_P = 1
-K_I = 0.3
+K_P = 0.1
+K_I = 0.5
 K_D = 5
 STEPS = 550
 car = make_car(desired_v=20.0, dt=0.1)
@@ -48,6 +48,3 @@ plt.xlabel("Time (s)")
 plt.ylabel("Error (m/s)")
 plt.title("Car Error vs Time")
 plt.show()
-
-
-

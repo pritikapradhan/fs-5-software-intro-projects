@@ -37,6 +37,14 @@ def update(car: dict, throttle_perc: float, mass: float = 1000, max_throttle_for
        Outputs:
        None, but updates the car's state variables
        """
+       # FRICTION EXTENSTION: have the friction change based on the step number to account for different road conditions
+       if car["step"] < 100:
+        friction = 2.0
+       elif car["step"] < 300:
+        friction = 5.0
+       else:
+        friction = 1.0
+
        force = throttle_perc * max_throttle_force
        car["a"] = (force / mass) - friction
        car["v"] += car["a"] * car["dt"]
