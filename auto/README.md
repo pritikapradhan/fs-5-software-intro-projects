@@ -38,8 +38,8 @@ The controller was tuned to reach a target velocity of 20 m/s.
 - Simulation time: 55 seconds
 - Final velocity: approximately 19.999 m/s
 - K_P: 0.8
-- K_I: 0.1
-- K_D: 0.9
+- K_I: 0.2
+- K_D: 0.1
 
 ## Machine Learning Extension
 

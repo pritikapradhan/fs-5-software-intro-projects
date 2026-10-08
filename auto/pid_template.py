@@ -36,12 +36,14 @@ def update(car: dict, throttle_perc: float, mass: float = 1000, max_throttle_for
        None, but updates the car's state variables
        """
        # FRICTION EXTENSTION: have the friction change based on the step number to account for different road conditions
+       """ commented out bc having friction drastically changed the output of the linear regression model, so I am leaving it out for now.
        if car["step"] < 100:
         friction = 2.0
        elif car["step"] < 300:
         friction = 5.0
        else:
         friction = 1.0
+        """
 
        force = throttle_perc * max_throttle_force
        car["a"] = (force / mass) - friction
@@ -56,15 +58,11 @@ def update(car: dict, throttle_perc: float, mass: float = 1000, max_throttle_for
 def calculate_desired_acceleration(car: dict, K_P: float, K_I: float = 0.0, K_D: float = 0.0) -> tuple[float, float]:
        #input: car["v"], car["desired_v"] (floats)
        #output: desired acceleration and error tuple(float, float)
-      
+
        error = car["desired_v"] - car["v"] # found error
 
-
        # adding integral term
-
-
        car["net_integral"] += error * car["dt"] # calling this in the loop is what makes it add up over time
-
 
        # derivative term
        if car["error_prev"] is None:
