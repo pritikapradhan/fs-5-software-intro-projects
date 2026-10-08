@@ -18,15 +18,15 @@ The project has two main parts:
 
 Navigate to the `auto` directory in the folder:
 
-cd auto
-run python3 run_template.py
+- cd auto
+- run python3 run_template.py
 
 The program will:
-Simulate the car using the PID controller
-Generate training and testing data
-Train the PyTorch model
-Evaluate the model
-Display the results and plots
+- Simulate the car using the PID controller
+- Generate training and testing data
+- Train the PyTorch model
+- Evaluate the model
+- Display the results and plots
 
 ## PID Results
 
@@ -49,7 +49,4 @@ Each training example contains:
 
 - Current velocity
 - Desired velocity
-
-### Target
-
-- Desired acceleration calculated by the PID controller
+Uses those as inputs and tries to predict the desired acceleration 
