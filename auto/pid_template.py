@@ -1,8 +1,6 @@
 import numpy as np
 
 
-
-
 def make_car(desired_v:float=20.0, dt:float=0.1) -> dict:
    """
    Generates a dictionary that holds all the car's values. Keeps track of state varaibles.
@@ -75,7 +73,6 @@ def calculate_desired_acceleration(car: dict, K_P: float, K_I: float = 0.0, K_D:
            derivative = (error - car["error_prev"]) / car["dt"]
        car["error_prev"] = error
        desired_acceleration = K_P * error + K_I * car["net_integral"] + K_D * derivative #from formula chart
-
 
        return desired_acceleration, error
 
