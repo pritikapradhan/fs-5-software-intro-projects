@@ -41,12 +41,3 @@ The controller was tuned to reach a target velocity of 20 m/s.
 - K_I: 0.2
 - K_D: 0.1
 
-## Machine Learning Extension
-
-I used the PID controller to generate a dataset for a machine learning model.
-
-Each training example contains:
-
-- Current velocity
-- Desired velocity
-Uses those as inputs and tries to predict the desired acceleration 
